@@ -1,0 +1,117 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "darkhal"
+version = "2.0.0"
+description = "DarkHal 2.0 - Advanced Local LLM Interface with AI Tasks and Games"
+readme = "README.md"
+license = "LGPL-2.1-only"
+authors = [
+    {name = "Setec Labs", email = "contact@seteclabs.com"}
+]
+maintainers = [
+    {name = "Setec Labs", email = "contact@seteclabs.com"}
+]
+keywords = ["llm", "ai", "chat", "local", "privacy", "chess", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Communications :: Chat",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: System :: Systems Administration :: Authentication/Directory"
+]
+requires-python = ">=3.12"
+dependencies = [
+    "llama-cpp-python>=0.2.80",
+    "huggingface_hub>=0.24.0",
+    "python-chess==1.999",
+    "requests>=2.32.0",
+    "numpy>=1.21.0",
+    "Pillow>=9.0.0",
+    "psutil>=5.8.0"
+]
+
+[project.optional-dependencies]
+gpu = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0"
+]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0"
+]
+all = [
+    "darkhal[gpu,dev]"
+]
+
+[project.urls]
+Homepage = "https://github.com/seteclabs/darkhal"
+Repository = "https://github.com/seteclabs/darkhal.git"
+Documentation = "https://github.com/seteclabs/darkhal/wiki"
+"Bug Tracker" = "https://github.com/seteclabs/darkhal/issues"
+
+[project.scripts]
+darkhal = "darkhal.main:main"
+darkhal-chess = "darkhal.chess_window:main"
+
+[project.gui-scripts]
+darkhal-gui = "darkhal.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["darkhal*"]
+exclude = ["tests*", "win-install*", "debian-install*", "llm_chess-main*", "temp_llm_chess*", "build*", "dist*"]
+
+[tool.setuptools.package-data]
+darkhal = [
+    "assets/*",
+    "engines/*",
+    "*.json",
+    "*.md",
+    "*.txt",
+    "*.env"
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # Directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

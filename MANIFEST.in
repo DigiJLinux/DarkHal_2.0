@@ -1,0 +1,50 @@
+# Include the README and license files
+include README.md
+include *.txt
+include *.md
+
+# Include configuration files
+include pyproject.toml
+include requirements.txt
+
+# Include everything in darkhal package directory
+recursive-include darkhal *
+
+# Include any JSON configuration files at root
+include *.json
+
+# Include environment files
+include *.env
+
+# Include any shell scripts that might be useful
+include *.sh
+include *.bat
+
+# Exclude development and build files
+exclude .gitignore
+exclude *.pyc
+exclude __pycache__
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.orig
+recursive-exclude * *.rej
+exclude .coverage
+exclude .tox
+recursive-exclude build *
+recursive-exclude dist *
+recursive-exclude .git *
+recursive-exclude win-install *
+recursive-exclude debian-install *
+recursive-exclude tests *
+recursive-exclude llm_chess-main *
+recursive-exclude temp_llm_chess *
+recursive-exclude llama-cpp-python *
+recursive-exclude downloads *
+recursive-exclude models *
+recursive-exclude games *
+
+# Exclude temporary and cache files
+exclude .DS_Store
+recursive-exclude * .DS_Store
+exclude Thumbs.db
+recursive-exclude * Thumbs.db
