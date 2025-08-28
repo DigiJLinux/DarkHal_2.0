@@ -1,3 +1,6 @@
+If you would like to join, please email ssSnake@darkHal.org or sshhh@setecastronomy.gg. Please include a short bio and a link to 2-3 projects you have worked on. If you have no experience and would like to join, email me at ssSnake@darkHal.org and make your case, just because you dont have experience doesn't mean you dont have skills. 
+
+
 # DarkHal 2.0 🤖
 
 <div align="center">
