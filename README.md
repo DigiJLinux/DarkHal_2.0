@@ -129,6 +129,9 @@ darkhal
 ```
 
 ### 💻 **CLI Mode**
+Full CLI command list coming soon. Right now the agent mode works best from a powershell, shell or bash.
+
+
 ```bash
 # Interactive chat
 python main.py --model path/to/model.gguf
