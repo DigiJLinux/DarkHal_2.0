@@ -64,7 +64,7 @@ If you would like to join, please email ssSnake@darkHal.org or sshhh@setecastron
 
 ### 🔧 **Quick Install (Recommended)**
 
-#### Windows
+#### Windows (Coming Soon)
 ```bash
 # Download and run the MSI installer
 darkhal-2.0-setup.msi
@@ -73,7 +73,7 @@ darkhal-2.0-setup.msi
 choco install darkhal
 ```
 
-#### macOS/Linux
+#### macOS/Linux (cooming soon)
 ```bash
 # Install via pip
 pip install darkhal
